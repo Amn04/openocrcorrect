@@ -2429,3 +2429,49 @@ void MainWindow::on_actionEnglish_triggered()
 {
     HinFlag = 0 , SanFlag = 0;
 }
+
+void MainWindow::toBold()
+{
+    QTextCursor cursor = ui->textBrowser->textCursor();
+    bool isBold = cursor.charFormat().font().bold();
+    QTextCharFormat fmt;
+    fmt.setFontWeight(isBold ? QFont::Normal : QFont::Bold);
+    cursor.mergeCharFormat(fmt);
+    ui->textBrowser->mergeCurrentCharFormat(fmt);
+}
+
+void MainWindow::toSubscript()
+{
+    QTextCursor cursor = ui->textBrowser->textCursor();
+    QTextCharFormat fmt;
+    fmt.setVerticalAlignment((cursor.charFormat().verticalAlignment() == QTextCharFormat::AlignSubScript)? QTextCharFormat::AlignNormal : QTextCharFormat::AlignSubScript);
+    cursor.mergeCharFormat(fmt);
+    ui->textBrowser->mergeCurrentCharFormat(fmt);
+}
+
+void MainWindow::toSuperscript()
+{
+    QTextCursor cursor = ui->textBrowser->textCursor();
+    QTextCharFormat fmt;
+    fmt.setVerticalAlignment((cursor.charFormat().verticalAlignment() == QTextCharFormat::AlignSuperScript)? QTextCharFormat::AlignNormal : QTextCharFormat::AlignSuperScript);
+    cursor.mergeCharFormat(fmt);
+    ui->textBrowser->mergeCurrentCharFormat(fmt);
+}
+
+void MainWindow::keyPressEvent(QKeyEvent *event)
+{
+    switch(event->key())
+    {
+        case Qt::Key_B:
+            toBold();
+            break;
+        case Qt::Key_Plus:
+            if(event->modifiers() == Qt::ShiftModifier|Qt::ControlModifier)
+                toSuperscript();
+        case Qt::Key_Equal:
+            if(event->modifiers() == Qt::ControlModifier){
+                toSubscript();}
+            break;
+    }
+}
+
