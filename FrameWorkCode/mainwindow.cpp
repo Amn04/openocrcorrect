@@ -2430,7 +2430,7 @@ void MainWindow::on_actionEnglish_triggered()
     HinFlag = 0 , SanFlag = 0;
 }
 
-void MainWindow::toBold()
+void MainWindow::toBold()                                            //aman
 {
     QTextCursor cursor = ui->textBrowser->textCursor();
     bool isBold = cursor.charFormat().font().bold();
