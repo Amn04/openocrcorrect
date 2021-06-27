@@ -1,3 +1,10 @@
+# New features added
+search aman in project to see what changes i had made.
+1. Bold/Unbold  --->  Ctrl+B
+2.Subscript/Normal ---->  Ctrl+=
+3.Superscript/Normal ---> Ctrl+Shift++
+
+
 # OpenOCRCorrect
 A framework for assisting human while correcting the OCR errors in documents, mostly dedicated to Indian Languages.
 Tested on Sanskrit, Hindi, Marathi and English.
@@ -46,6 +53,8 @@ Compiled and Tested on Ubuntu Ubuntu 16.04. with Qt 5
 
 Execute file qpadfinal in folder "FrameWorkCode"
 - $ ./qpadfinal
+- For windows 
+- Qt 5.9.9 with MingW compiler 32bit 
 
 # Creating Databse for Framework:
 
