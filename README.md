@@ -1,7 +1,10 @@
 # New features added
 search aman in project to see what changes i had made.
+
 1. Bold/Unbold  --->  Ctrl+B
+
 2.Subscript/Normal ---->  Ctrl+=
+
 3.Superscript/Normal ---> Ctrl+Shift++
 
 
